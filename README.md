@@ -1,6 +1,6 @@
 # Intro
 
-NOTE: WORK IN PROGRESS
+NOTE: THIS IMPLEMENTATION IS JUST FOR FUN. IT HAS NO PRACTICAL USE.
 
 Module provides constant-time implementation of basic arithmetic operations. 
 
@@ -35,7 +35,15 @@ The risk with software implementation is that the compiler may optimize the code
 
 Other risk is that the CPU may optimize the code in a way that breaks the constant-time property. For example, the CPU use cache memory to store frequently accessed data. If the data is accessed in a way that depends on the input values, the cache memory may leak information about the input values.
 
-# Other
+# Tests
+
+Run tests with:
+
+```bash
+go test ./... -v
+go test ./... -v -fuzz=<name of Fuzz test>  -fuzztime 10s
 
 
-go test ./... -v -fuzz=Fuzz  -fuzztime 10s
+# Run benchmarks
+go test ./... -v -bench=.
+```
